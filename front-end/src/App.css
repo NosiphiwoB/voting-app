@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+#form {
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  margin:auto;
+  margin-top: 50px;
+}
+
+h1 {
+  margin-top: 50px;
+}
+
+nav {
+  padding:12px;
+  display: flex;
+  background-color: lightgray;
+}
+
+Link{
+  text-decoration: none;
+}
+
+#add-party {
+  margin-right:10px;
+}
