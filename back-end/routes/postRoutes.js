@@ -14,7 +14,7 @@ const saveDetails = (app) => {
         res.send({massage:"Succesfully saved", postSaved})
     }catch (error) {
         console.error("post error", error)
-        res.send({massage:"post error"}).status(401)
+        res.send({massage:"post error"}).status(404)
     }
 
     })
