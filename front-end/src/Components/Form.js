@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 
-const Form = () => {
-
+const Form = (props) => {
+  const {handleChange, handleSubmit, partyname, startdate, leader, members} = props;
     return(
         <div>
             <Navbar/>
