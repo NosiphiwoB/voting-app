@@ -1,11 +1,11 @@
 const mongoose = require("mongoose")
 
-const postSchema = mangoose.Schema({
-    partyName: {
+const postSchema = mongoose.Schema({
+    partyname: {
         type: String,
         require: true
     },
-    startDate: {
+    startdate: {
         type: Date,
         require: true
     },

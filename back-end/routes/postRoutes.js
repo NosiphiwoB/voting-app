@@ -1,19 +1,20 @@
 const postSchema = require('../models/postSchema')
 
 const saveDetails = (app) => {
+  
     app.post('/save_details' , async (req, res) => {
-        let {partyName , startDate , leader , members} = req.bdy
+        let {partyname , startdate , leader , members} = req.body
 
     try{
         let post = new postSchema ({
-            partyName , startDate , leader , members
+            partyname , startdate , leader , members
         })
         const postSaved = await post.save()
          
         res.send({massage:"Succesfully saved", postSaved})
     }catch (error) {
         console.error("post error", error)
-        res.send({massage:"post error"}.status(3003))
+        res.send({massage:"post error"}).status(401)
     }
 
     })
@@ -26,6 +27,11 @@ const saveDetails = (app) => {
             console.log('error', error)
         }
     })
+ 
+  
+
 }
+
+
 
 module.exports = {saveDetails}
