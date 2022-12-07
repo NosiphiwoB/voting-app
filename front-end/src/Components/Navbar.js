@@ -6,8 +6,8 @@ const Navbar = () => {
     return (
         <div>
          <nav>
-           <Link to='/' id="add-party">Add Party</Link>
-           <Link to='/display'>View Party</Link>
+           <button><Link to='/' id="add-party">Add Party</Link></button>
+           <button><Link to='/display'>View Party</Link></button>
 
          </nav>
 

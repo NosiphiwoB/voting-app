@@ -2,8 +2,7 @@ import Form from './Form';
 import axios from 'axios';
 import { useNavigate, Routes, Route } from 'react-router-dom'
 import Display from './Display';
-import { useEffect } from 'react';
-import { get } from 'mongoose';
+import { useEffect, useState } from 'react';
 
 const Main = () => {
    let navigate = useNavigate()
@@ -20,7 +19,7 @@ const Main = () => {
     getDetails();
    }, []);
 
-   const handleChange = () => {
+   const handleChange = (e) => {
     setForm({
       ...form,
        [e.target.name]:e.target.value,
@@ -30,7 +29,7 @@ const Main = () => {
    const handleSubmit = async (e) => {
    e.preventDefault();
    if(form.partyname === "" || form.startdate === "" || form.leader === "" || form.members === "") {
-    return  alert ("Fill all all the inputs")
+    return  alert ("Fill all the inputs")
    }else{
     try{
       const saveDetails = await axios.post(

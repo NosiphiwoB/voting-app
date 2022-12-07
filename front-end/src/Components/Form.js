@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 
 const Form = (props) => {
@@ -11,29 +10,45 @@ const Form = (props) => {
         <h1>Add Party</h1>        
        </div>
 
-       <form id="form">
+       <form id="form" onSubmit={handleSubmit}>
          <div>
            <label>Party Name</label>
-           <input></input>
+           <input
+            onChange={handleChange}
+            name="partyname"
+            value={partyname}
+           />
          </div>
 
          <div>
           <label>Start Date</label>
-          <input type="date"></input>
+          <input type="date"
+           onChange={handleChange}
+           name="startdate"
+           value={startdate}
+          />
          </div>
 
         <div>
           <label>Leader</label>
-          <input></input>
+          <input 
+          onChange={handleChange}
+          name="leader"
+          value={leader}
+          />
         </div>
 
         <div>
          <label>Members</label>
-         <input type="number"></input>
+         <input type="number"
+         onChange={handleChange}
+         name="members"
+         value={members}
+         />
         </div>
 
         <div>
-         <button>Submit</button>
+         <button type="submit">Submit</button>
         </div>
 
 

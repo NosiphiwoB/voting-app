@@ -6,7 +6,7 @@ const postSchema = mongoose.Schema({
         require: true
     },
     startdate: {
-        type: Date,
+        type: String,
         require: true
     },
     leader: {

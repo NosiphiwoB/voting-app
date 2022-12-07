@@ -55,8 +55,29 @@ nav {
   background-color: lightgray;
 }
 
+nav a {
+  text-decoration: none;
+}
 
 
 #add-party {
   margin-right:10px;
+}
+
+#cards {
+  
+  transition: 0.3s;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.1rem
+  }
+.card{
+  /* border: 1px solid black; */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
+  width: 45%;
+  background-color: #CFB997;
+}
+
+button {
+  border-radius: 10px;
 }
