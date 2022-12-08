@@ -27,8 +27,17 @@ const saveDetails = (app) => {
             console.log('error', error)
         }
     })
- 
-  
+
+    app.delete('/delete_party/:id' , async (req , res)  =>  {
+        try{
+            const {id} = req.params  
+            const partyToDelete = await postSchema.deleteOne({_id : id})
+            res.send({message: "Successfully deleted", partyToDelete})
+        }catch(err){
+            console.log(err);
+            res.sendStatus(501)
+        }
+    })
 
 }
 

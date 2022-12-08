@@ -62,14 +62,20 @@ const Main = () => {
       .catch(() => {
       });
     };
-   
+
+    const deleteParty = async (id) => {
+      console.log('id', id)
+      let res = await axios.delete(`http://localhost:3005/delete_party/${id}`);
+      getDetails();
+      return res.data
+     }
 
   return (
 
     <div>
       <Routes>
         <Route path="/" exact  element={<Form handleChange={handleChange} handleSubmit={handleSubmit}/>}/>
-        <Route path="/display" element={<Display card={card} getDetails={getDetails}/>} />
+        <Route path="/display" element={<Display card={card} getDetails={getDetails} deleteParty={deleteParty}/>} />
       </Routes>
     </div>
 
