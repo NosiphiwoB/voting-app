@@ -14,7 +14,7 @@ const Display = (props) =>{
                     <p>{item.startdate}</p>
                     <p>{item.leader}</p>
                     <p>{item.members}</p>
-                    <button type="submit" value="delete" className="delete" onClick={()=>deleteParty(item._id)}>X</button>
+                    <button type="submit" value="delete" id="delete" onClick={()=>deleteParty(item._id)}>X</button>
                 </card>
             )
         })}</div>    

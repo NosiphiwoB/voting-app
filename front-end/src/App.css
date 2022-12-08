@@ -69,7 +69,8 @@ nav a {
   transition: 0.3s;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 0.1rem
+  gap: 0.1rem;
+  margin: 20px;
   }
 .card{
   /* border: 1px solid black; */
@@ -80,4 +81,10 @@ nav a {
 
 button {
   border-radius: 10px;
+}
+
+#delete {
+  position: relative;
+  left:70px;
+  top:-156px;
 }
