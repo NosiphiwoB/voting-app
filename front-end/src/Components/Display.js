@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 
 const Display = (props) =>{
-    const {card, deleteParty} = props
+    const {card, deleteParty, increment, decrement} = props
     return(
         <div>
             <Navbar/>
@@ -15,6 +15,11 @@ const Display = (props) =>{
                     <p>{item.leader}</p>
                     <p>{item.members}</p>
                     <button type="submit" value="delete" id="delete" onClick={()=>deleteParty(item._id)}>X</button>
+                    <div>
+                    <button onClick={()=>decrement(item._id,item.members)}>-</button>
+                    <button>Vote</button>
+                    <button onClick={()=>increment(item._id,item.members)}>+</button>
+                    </div>
                 </card>
             )
         })}</div>    

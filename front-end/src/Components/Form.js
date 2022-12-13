@@ -20,7 +20,7 @@ const Form = (props) => {
            />
          </div>
 
-         <div>
+         <div className="dateInput">
           <label>Start Date</label>
           <input type="date"
            onChange={handleChange}

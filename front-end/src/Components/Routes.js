@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 
 const Main = () => {
    let navigate = useNavigate()
-
    const [form, setForm] = useState({
     partyname:"",
     startdate:"",
@@ -70,12 +69,40 @@ const Main = () => {
       return res.data
      }
 
+
+    const increment = async(id, data) => {
+
+      let value = Number(data);
+      value++;
+      let res = await axios.put(`http://localhost:3005/increment/${id}`, {members: value.toString()}).then(res=>{
+        getDetails();
+      }).catch(error=> console.log(error));
+      
+      return res
+
+    };
+
+
+    const decrement = async(id, data) => {
+
+      let value = Number(data);
+      value--;
+      let res = await axios.put(`http://localhost:3005/decrement/${id}`, {members: value.toString()}).then(res=>{
+        getDetails();
+      }).catch(error=> console.log(error));
+      
+      return res
+
+    };
+
+  
+
   return (
 
     <div>
       <Routes>
         <Route path="/" exact  element={<Form handleChange={handleChange} handleSubmit={handleSubmit}/>}/>
-        <Route path="/display" element={<Display card={card} getDetails={getDetails} deleteParty={deleteParty}/>} />
+        <Route path="/display" element={<Display card={card} getDetails={getDetails} deleteParty={deleteParty} increment={increment} decrement={decrement}/>} />
       </Routes>
     </div>
 

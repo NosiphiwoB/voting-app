@@ -38,6 +38,28 @@ const saveDetails = (app) => {
             res.sendStatus(501)
         }
     })
+app.put('/increment/:id', async (req, res) =>{
+
+    try {
+        await postSchema.findByIdAndUpdate({_id : req.params.id},{ members: req.body.members});
+        res.status(200).send({message: `Members successfully increased`})   
+    } catch (error) {
+        res.status(400).send(error)
+    }
+
+})
+
+app.put('/decrement/:id', async (req, res) =>{
+
+    try {
+        await postSchema.findByIdAndUpdate({_id : req.params.id},{ members: req.body.members});
+        res.status(200).send({message: `Members successfully decreased`})   
+    } catch (error) {
+        res.status(400).send(error)
+    }
+
+})
+
 
 }
 

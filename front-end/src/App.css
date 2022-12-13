@@ -43,6 +43,13 @@
   height: 200px;
   margin:auto;
   margin-top: 50px;
+  display: grid;
+  
+}
+.dateInput{
+display: grid;
+margin-left: 4%;
+margin-right: 4%;
 }
 
 h1 {
@@ -73,7 +80,6 @@ nav a {
   margin: 20px;
   }
 .card{
-  /* border: 1px solid black; */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
   width: 45%;
   background-color: #CFB997;
@@ -88,3 +94,5 @@ button {
   left:70px;
   top:-156px;
 }
+
+
